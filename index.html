@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vue.js"></script>
+    <title> GOT </title>
+</head>
+
+<body>
+    <div id="app">
+        <hr>
+
+        <h1> Melhor casa: {{ houses[0] }}</h1>
+        <h1> Melhor Personagem: {{ personagens[1].nome }}, {{ personagens[1].title }}</h1>
+        <hr>
+        Concorda? <input v-model="msg" type="text" placeholder="Sua opinião"> <br>
+        {{ msg }}
+    </div>
+</body>
+<script>
+
+    const vm = new Vue({
+        el: '#app', //# - ID
+        data: {     //Toda variavel que o elemento app vai usar (reativo)
+            msg: "",
+            houses: [
+                'starks',
+                'targaeryan',
+                'martell',
+                'tyrell',
+                'baratheon',
+                'greyjoy',
+                'lennister'
+            ],
+            personagens:
+                [
+                    {
+                        nome: 'Jon Snow',
+                        title: 'the king in the north'
+                    },
+                    {
+                        nome: 'Theon Greyjoy',
+                        title: 'the iron wolf'
+                    },
+                    {
+                        nome: 'Jaime Lennister',
+                        title: 'kingslayer'
+                    }
+                ]
+        }
+    })
+    console.log(vm);
+</script>
+
+</html>
