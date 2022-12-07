@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <title> Document </title>
+</head>
+
+<body>
+    <div id="app">
+        <a :href="site"> Site </a>
+        <p :class="cor"> V-Bind </p>
+        <input type="text" :placeholder="msg" :value="valor">
+        <input type="checkbox" :checked="check">
+    </div>
+</body>
+<script>
+
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            site: 'https://google.com',
+            cor: 'vermelho',
+            msg: 'Digite aqui',
+            valor: 'teste',
+            check: true
+        },
+        methods: {
+
+        }
+    })
+
+</script>
+
+</html>

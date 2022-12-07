@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <title> Document </title>
+</head>
+
+<body>
+    <div id="app">
+        {{ soma() }}
+        {{ sub() }}
+        {{ mul() }}
+        {{ div() }}
+    </div>
+</body>
+<script>
+
+    const vm = new Vue({
+        el: '#app', //# - ID
+        data: {     // Toda variavel que o elemento app vai usar (reativo)
+            n1: 10,
+            n2: 5
+        },
+        methods: {   // Funções que o elemento vai usar
+            somar: function soma() { // convencional
+                return this.n1 + this.n2;
+            },
+            sub: function () { // anonima
+                return this.n1 - this.n2;
+            },
+            mul: () => { //arrow function
+                return this.n1 * this.n2; // Não funciona, contexto léxico
+            },
+            div() {      // Forma enxuta
+                return this.n1 / this.n2;
+            }
+        }
+    })
+    console.log(vm);
+</script>
+
+</html>
